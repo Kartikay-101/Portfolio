@@ -16,6 +16,27 @@ if (preloader) {
   });
 }
 
+const bgVideo = document.querySelector("video.back");
+
+if (bgVideo) {
+  bgVideo.muted = true;
+  bgVideo.setAttribute("playsinline", "");
+  bgVideo.setAttribute("webkit-playsinline", "true");
+
+  const tryPlayBgVideo = function () {
+    const playPromise = bgVideo.play();
+    if (playPromise && typeof playPromise.then === "function") {
+      playPromise.catch(function () {
+        // Mobile browsers may block autoplay until the first interaction.
+      });
+    }
+  };
+
+  tryPlayBgVideo();
+  window.addEventListener("touchstart", tryPlayBgVideo, { once: true });
+  window.addEventListener("click", tryPlayBgVideo, { once: true });
+}
+
 // sidebar variables
 const sidebar = document.querySelector("[data-sidebar]");
 const sidebarBtn = document.querySelector("[data-sidebar-btn]");
