@@ -12,7 +12,7 @@ if (preloader) {
     preloader.classList.add("hidden");
     setTimeout(function () {
       preloader.remove();
-    }, 5000);
+    }, 60000);
   });
 }
 
