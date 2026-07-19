@@ -1306,14 +1306,82 @@ main {
   #CONTACT
 \*-----------------------------------*/
 
+.contact-intro {
+  display: grid;
+  gap: 20px;
+  padding: 20px;
+  margin-bottom: 25px;
+  border: 1px solid var(--jet);
+  border-radius: 20px;
+  background: var(--bg-gradient-jet);
+  box-shadow: var(--shadow-2);
+}
+
+.contact-intro-copy {
+  display: grid;
+  gap: 10px;
+}
+
+.contact-eyebrow {
+  color: var(--orange-yellow-crayola);
+  font-size: var(--fs-7);
+  font-weight: var(--fw-500);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.contact-copy {
+  color: var(--light-gray);
+  font-size: var(--fs-6);
+  line-height: 1.7;
+}
+
+.contact-details {
+  display: grid;
+  gap: 12px;
+}
+
+.contact-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  border: 1px solid var(--jet);
+  border-radius: 16px;
+  background: var(--eerie-black-1);
+}
+
+.contact-card .icon-box {
+  width: 38px;
+  height: 38px;
+  border-radius: 12px;
+}
+
+.contact-card .contact-title {
+  margin-bottom: 3px;
+  color: var(--white-2);
+}
+
+.contact-card .contact-link,
+.contact-card address {
+  color: var(--light-gray-70);
+  font-size: var(--fs-6);
+  font-style: normal;
+}
+
+.contact-panel {
+  display: grid;
+  gap: 20px;
+}
+
 .mapbox {
   position: relative;
   height: 250px;
   width: 100%;
   border-radius: 16px;
-  margin-bottom: 30px;
   border: 1px solid var(--jet);
   overflow: hidden;
+  box-shadow: var(--shadow-2);
 }
 
 .mapbox figure { height: 100%; }
@@ -1325,7 +1393,14 @@ main {
   filter: grayscale(1) invert(1);
 }
 
-.contact-form { margin-bottom: 10px; }
+.contact-form {
+  margin-bottom: 10px;
+  padding: 20px;
+  border: 1px solid var(--jet);
+  border-radius: 20px;
+  background: var(--bg-gradient-jet);
+  box-shadow: var(--shadow-2);
+}
 
 .form-title { margin-bottom: 20px; }
 
@@ -1344,6 +1419,7 @@ main {
   border: 1px solid var(--jet);
   border-radius: 14px;
   outline: none;
+  background: rgba(255, 255, 255, 0.02);
 }
 
 .form-input::placeholder { font-weight: var(--fw-500); }
@@ -1493,6 +1569,11 @@ textarea.form-input::-webkit-resizer { display: none; }
     height: 48px;
     border-radius: 12px;
     font-size: 18px;
+  }
+
+  .contact-panel {
+    grid-template-columns: 1.05fr 0.95fr;
+    align-items: start;
   }
 
 

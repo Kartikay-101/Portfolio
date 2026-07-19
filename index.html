@@ -840,7 +840,7 @@
             </li>
 
             <li class="project-item active" data-filter-item data-category="software development">
-              <a href="#" class="project-card" aria-label="Open ZeroTrace Secure Chat Application project">
+              <a href="https://github.com/Kartikay-101/Zero-Trace-Chat" class="project-card" aria-label="Open ZeroTrace Secure Chat Application project">
                 <figure class="project-img">
                   <div class="project-item-icon-box">
                     <ion-icon name="eye-outline"></ion-icon>
@@ -1016,75 +1016,74 @@
           <h2 class="h2 article-title">Contact</h2>
         </header>
 
-        <section class="mapbox" data-mapbox>
-          <figure>
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d112203.86977314153!2d77.43342268612479!3d28.498485718123696!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cea64b8f89aef%3A0xec0ccabb5317962e!2sGreater%20Noida%2C%20Uttar%20Pradesh!5e0!3m2!1sen!2sin!4v1719469173324!5m2!1sen!2sin"
-              width="400" height="300" loading="lazy"></iframe>
-          </figure>
-        </section>
+        <section class="contact-intro">
+          <div class="contact-intro-copy">
+            <p class="contact-eyebrow">Let’s connect</p>
+            <h3 class="h3 form-title">Open for analytics roles, freelance collaborations, and data-driven conversations.</h3>
+            <p class="contact-copy">
+              Whether you’re hiring for a data analyst role, looking for help turning messy data into clear insights, or want to discuss dashboards, SQL, and automation, I’d love to hear from you.
+            </p>
+          </div>
 
-        <section class="contact-form">
-
-          <h3 class="h3 form-title">Contact Form</h3>
-
-          <form action="index.php" class="form" method="post" data-form>
-
-            <div class="input-wrapper">
-              <input type="text" name="fullname" class="form-input" placeholder="Full name:" required data-form-input>
-
-              <input type="email" name="email" class="form-input" placeholder="Email address:" required data-form-input>
+          <div class="contact-details">
+            <div class="contact-card">
+              <div class="icon-box">
+                <ion-icon name="mail-outline"></ion-icon>
+              </div>
+              <div>
+                <p class="contact-title">Email</p>
+                <a href="mailto:nautiyalkartikay@gmail.com" class="contact-link">nautiyalkartikay@gmail.com</a>
+              </div>
             </div>
 
-            <textarea name="message" class="form-input" placeholder="Your Message:" required data-form-input></textarea>
+            <div class="contact-card">
+              <div class="icon-box">
+                <ion-icon name="call-outline"></ion-icon>
+              </div>
+              <div>
+                <p class="contact-title">Phone</p>
+                <a href="tel:+918447666603" class="contact-link">+91 8447666603</a>
+              </div>
+            </div>
 
-            <button class="form-btn" type="submit" name="submit"  data-form-btn>
-              <ion-icon name="paper-plane"></ion-icon>
-              <span>Send Message</span>
-            </button>
+            <div class="contact-card">
+              <div class="icon-box">
+                <ion-icon name="location-outline"></ion-icon>
+              </div>
+              <div>
+                <p class="contact-title">Location</p>
+                <address>Greater Noida, Uttar Pradesh, India</address>
+              </div>
+            </div>
+          </div>
+        </section>
 
-          </form>
+        <section class="contact-panel">
+          <div class="mapbox" data-mapbox>
+            <figure>
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d112203.86977314153!2d77.43342268612479!3d28.498485718123696!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cea64b8f89aef%3A0xec0ccabb5317962e!2sGreater%20Noida%2C%20Uttar%20Pradesh!5e0!3m2!1sen!2sin!4v1719469173324!5m2!1sen!2sin"
+                width="400" height="300" loading="lazy"></iframe>
+            </figure>
+          </div>
 
-                  <!-- PHP code for form submission -->
-    <?php
-        if (isset($_POST["submit"])) {
-            $fullName = $_POST["fullname"];
-            $email = $_POST["email"];
-            $message = $_POST["message"];
+          <div class="contact-form">
+            <h3 class="h3 form-title">Send a message</h3>
 
-            $errors = array();
-            
-            if (empty($fullName) || empty($email) || empty($message)) {
-                array_push($errors,"All fields are required");
-            }
-            if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-                array_push($errors,"Invalid email format");
-            }
-            if (strlen($message)<10) {
-                array_push($errors,"Message should be atleast 10 characters long");
-            }
+            <form action="#" class="form" method="post" data-form>
+              <div class="input-wrapper">
+                <input type="text" name="fullname" class="form-input" placeholder="Full name:" required data-form-input>
+                <input type="email" name="email" class="form-input" placeholder="Email address:" required data-form-input>
+              </div>
 
-            if (count($errors)>0) {
-                foreach ($errors as  $error) {
-                    echo "<div class='alert alert-danger'>$error</div>";
-                }
-            }else{
-            require_once "database.php";
-            $sql = "INSERT INTO users (full_name, email, message) VALUES (?,?,?)";
-            $stmt = mysqli_stmt_init($conn);
-            $prepareStmt = mysqli_stmt_prepare($stmt,$sql);
-            if ($prepareStmt) {
-                mysqli_stmt_bind_param($stmt, "sss", $fullName, $email, $message);
-                mysqli_stmt_execute($stmt);
-                echo "<div class='alert alert-success' style='text-align: center; display: flex; justify-content: center; align-items: center; height: 10%; margin-top: 20px;'>Message submitted successfully!</div>";
-            }else{
-                die("Something went wrong");
-            }
-            }
-            }
-        ?>
-        <!-- PHP code for form submission -->
-          
+              <textarea name="message" class="form-input" placeholder="Your Message:" required data-form-input></textarea>
+
+              <button class="form-btn" type="submit" name="submit" data-form-btn>
+                <ion-icon name="paper-plane"></ion-icon>
+                <span>Send Message</span>
+              </button>
+            </form>
+          </div>
         </section>
 
       </article>
