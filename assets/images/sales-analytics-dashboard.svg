@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 480" role="img" aria-labelledby="title desc">
+  <title id="title">Sales performance analytics dashboard</title>
+  <desc id="desc">A stylised dashboard with sales KPIs, a line graph, and a regional chart.</desc>
+  <defs>
+    <linearGradient id="background" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#151b2f"/>
+      <stop offset="1" stop-color="#24355a"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#f6c85f"/>
+      <stop offset="1" stop-color="#68d8d6"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="480" rx="28" fill="url(#background)"/>
+  <circle cx="682" cy="72" r="130" fill="#ffffff" opacity=".04"/>
+  <text x="54" y="69" fill="#f8fafc" font-family="Arial, sans-serif" font-size="26" font-weight="700">Sales performance</text>
+  <text x="54" y="98" fill="#b8c4df" font-family="Arial, sans-serif" font-size="16">Analytics dashboard</text>
+  <g font-family="Arial, sans-serif">
+    <rect x="54" y="132" width="206" height="92" rx="14" fill="#ffffff" opacity=".08"/>
+    <text x="76" y="162" fill="#b8c4df" font-size="14">TOTAL SALES</text>
+    <text x="76" y="201" fill="#f8fafc" font-size="31" font-weight="700">$842K</text>
+    <path d="M201 191l12-13 10 7 17-28" fill="none" stroke="#68d8d6" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+    <rect x="282" y="132" width="206" height="92" rx="14" fill="#ffffff" opacity=".08"/>
+    <text x="304" y="162" fill="#b8c4df" font-size="14">PROFIT MARGIN</text>
+    <text x="304" y="201" fill="#f8fafc" font-size="31" font-weight="700">28.4%</text>
+    <circle cx="452" cy="180" r="17" fill="none" stroke="#f6c85f" stroke-width="7" stroke-dasharray="78 29" transform="rotate(-90 452 180)"/>
+    <rect x="510" y="132" width="236" height="92" rx="14" fill="#ffffff" opacity=".08"/>
+    <text x="532" y="162" fill="#b8c4df" font-size="14">TOP REGION</text>
+    <text x="532" y="201" fill="#f8fafc" font-size="28" font-weight="700">North</text>
+  </g>
+  <rect x="54" y="251" width="448" height="175" rx="16" fill="#ffffff" opacity=".08"/>
+  <text x="76" y="286" fill="#f8fafc" font-family="Arial, sans-serif" font-size="16" font-weight="700">Monthly sales trend</text>
+  <g stroke="#b8c4df" stroke-opacity=".2"><path d="M76 323h402M76 360h402M76 397h402"/></g>
+  <path d="M80 393 C118 374 133 385 167 351 S217 366 246 328 S297 343 326 311 S378 325 408 285 S450 300 478 270" fill="none" stroke="url(#accent)" stroke-width="7" stroke-linecap="round"/>
+  <circle cx="478" cy="270" r="7" fill="#f6c85f"/>
+  <rect x="526" y="251" width="220" height="175" rx="16" fill="#ffffff" opacity=".08"/>
+  <text x="548" y="286" fill="#f8fafc" font-family="Arial, sans-serif" font-size="16" font-weight="700">Regional performance</text>
+  <g fill="#68d8d6"><rect x="558" y="372" width="23" height="27" rx="5"/><rect x="601" y="335" width="23" height="64" rx="5"/><rect x="644" y="311" width="23" height="88" rx="5"/><rect x="687" y="348" width="23" height="51" rx="5"/></g>
+</svg>

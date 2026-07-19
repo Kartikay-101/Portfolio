@@ -27,31 +27,29 @@ const modalImg = document.querySelector("[data-modal-img]");
 const modalTitle = document.querySelector("[data-modal-title]");
 const modalText = document.querySelector("[data-modal-text]");
 
-// modal toggle function
-const testimonialsModalFunc = function () {
-  modalContainer.classList.toggle("active");
-  overlay.classList.toggle("active");
+// The legacy certificate modal is optional. Keep the rest of the site functional
+// when the portfolio uses simple recognition cards instead of modal certificates.
+if (testimonialsItem.length && modalContainer && modalCloseBtn && overlay && modalImg && modalTitle && modalText) {
+  const testimonialsModalFunc = function () {
+    modalContainer.classList.toggle("active");
+    overlay.classList.toggle("active");
+  }
+
+  for (let i = 0; i < testimonialsItem.length; i++) {
+    testimonialsItem[i].addEventListener("click", function () {
+      const testimonialAvatar = this.querySelector("[data-testimonials-avatar]");
+
+      modalImg.src = testimonialAvatar.src;
+      modalImg.alt = testimonialAvatar.alt;
+      modalTitle.innerHTML = this.querySelector("[data-testimonials-title]").innerHTML;
+      modalText.innerHTML = this.querySelector("[data-testimonials-text]").innerHTML;
+      testimonialsModalFunc();
+    });
+  }
+
+  modalCloseBtn.addEventListener("click", testimonialsModalFunc);
+  overlay.addEventListener("click", testimonialsModalFunc);
 }
-
-// add click event to all modal items
-for (let i = 0; i < testimonialsItem.length; i++) {
-
-  testimonialsItem[i].addEventListener("click", function () {
-
-    modalImg.src = this.querySelector("[data-testimonials-avatar]").src;
-    modalImg.alt = this.querySelector("[data-testimonials-avatar]").alt;
-    modalTitle.innerHTML = this.querySelector("[data-testimonials-title]").innerHTML;
-    modalText.innerHTML = this.querySelector("[data-testimonials-text]").innerHTML;
-
-    testimonialsModalFunc();
-
-  });
-
-}
-
-// add click event to modal close button
-modalCloseBtn.addEventListener("click", testimonialsModalFunc);
-overlay.addEventListener("click", testimonialsModalFunc);
 
 
 
