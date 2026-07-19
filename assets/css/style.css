@@ -132,9 +132,16 @@ input, textarea {
 
 html { font-family: var(--ff-poppins); }
 
-body { background: var(--smoky-black); }
+body {
+  background: var(--smoky-black);
+  position: relative;
+  overflow-x: hidden;
+}
 
-
+main {
+  position: relative;
+  z-index: 1;
+}
 
 
 
@@ -2154,26 +2161,55 @@ textarea.form-input::-webkit-resizer { display: none; }
     justify-content: center; /* Centers children horizontally */
     text-align: center; /* Ensures the text inside the button is centered, if needed */
   }
+  /* resume download button */
+  .skills-section {
+    display: flex;
+    flex-direction: column;
+    padding-top: 20px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
   .download-resume-btn {
-    display: inline-block;
-    padding: 12px 20px;
-    background-image: linear-gradient(135deg, #4caf50, #2196f3); /* Green to blue gradient */
-    color: #fff;
-    text-decoration: none;
-    font-weight: bold;
-    border-radius: 22px;
-    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 13px 22px;
+    background: var(--border-gradient-onyx);
+    color: var(--orange-yellow-crayola);
+    border-radius: 14px;
+    font-size: var(--fs-6);
+    font-weight: var(--fw-500);
+    text-transform: capitalize;
+    box-shadow: var(--shadow-3);
+    z-index: 1;
+    transition: var(--transition-1);
+    overflow: hidden;
   }
-  
+
+  .download-resume-btn::before {
+    content: "";
+    position: absolute;
+    inset: 1px;
+    background: var(--bg-gradient-jet);
+    border-radius: inherit;
+    z-index: -1;
+    transition: var(--transition-1);
+  }
+
   .download-resume-btn:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+    background: var(--bg-gradient-yellow-1);
+    color: var(--white-2);
   }
-  
+
+  .download-resume-btn:hover::before {
+    background: var(--bg-gradient-yellow-2);
+  }
+
   .download-resume-btn:active {
     transform: translateY(1px);
-    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
   }
 
 @media (min-width: 1250px) {
@@ -2240,3 +2276,28 @@ textarea.form-input::-webkit-resizer { display: none; }
   pointer-events: none;
 }
 /* PRELOADER END */
+
+
+.back {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+  pointer-events: none;
+}
+
+@media (min-aspect-ratio: 16/9) {
+  .back {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+@media (max-aspect-ratio: 16/9) {
+  .back {
+    width: 100%;
+    height: 100%;
+  }
+}
