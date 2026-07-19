@@ -52,6 +52,34 @@ if (testimonialsItem.length && modalContainer && modalCloseBtn && overlay && mod
 }
 
 
+// certificate carousel controls
+const credentialCarousel = document.querySelector("[data-credential-carousel]");
+const credentialPrevious = document.querySelector("[data-credential-prev]");
+const credentialNext = document.querySelector("[data-credential-next]");
+
+if (credentialCarousel && credentialPrevious && credentialNext) {
+  const updateCredentialControls = function () {
+    const maxScroll = credentialCarousel.scrollWidth - credentialCarousel.clientWidth;
+
+    credentialPrevious.disabled = credentialCarousel.scrollLeft <= 4;
+    credentialNext.disabled = credentialCarousel.scrollLeft >= maxScroll - 4;
+  }
+
+  const scrollCredentials = function (direction) {
+    credentialCarousel.scrollBy({
+      left: direction * Math.min(credentialCarousel.clientWidth * 0.86, 420),
+      behavior: "smooth"
+    });
+  }
+
+  credentialPrevious.addEventListener("click", function () { scrollCredentials(-1); });
+  credentialNext.addEventListener("click", function () { scrollCredentials(1); });
+  credentialCarousel.addEventListener("scroll", updateCredentialControls, { passive: true });
+  window.addEventListener("resize", updateCredentialControls);
+  requestAnimationFrame(updateCredentialControls);
+}
+
+
 
 // custom select variables
 const select = document.querySelector("[data-select]");

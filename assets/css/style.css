@@ -651,6 +651,43 @@ main {
   margin-bottom: 7px;
 }
 
+.certificate-carousel-controls {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin: -44px 0 12px;
+}
+
+.certificate-control {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  color: var(--orange-yellow-crayola);
+  background: var(--onyx);
+  border: 1px solid var(--jet);
+  border-radius: 10px;
+  transition: var(--transition-1);
+}
+
+.certificate-control:hover:not(:disabled),
+.certificate-control:focus-visible:not(:disabled) {
+  color: var(--smoky-black);
+  background: var(--orange-yellow-crayola);
+  border-color: var(--orange-yellow-crayola);
+}
+
+.certificate-control:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.certificate-control ion-icon {
+  font-size: 18px;
+  --ionicon-stroke-width: 46px;
+}
+
 .credentials-list {
   display: flex;
   align-items: stretch;
@@ -662,6 +699,7 @@ main {
   overscroll-behavior-inline: contain;
   scroll-snap-type: inline mandatory;
   scroll-padding-inline: 4px;
+  scrollbar-color: var(--vegas-gold) var(--jet);
 }
 
 .credentials-list .testimonials-item {
