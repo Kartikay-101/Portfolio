@@ -5,7 +5,16 @@
 // element toggle function
 const elementToggleFunc = function (elem) { elem.classList.toggle("active"); }
 
+const preloader = document.getElementById("preloader");
 
+if (preloader) {
+  window.addEventListener("load", function () {
+    preloader.classList.add("hidden");
+    setTimeout(function () {
+      preloader.remove();
+    }, 5000);
+  });
+}
 
 // sidebar variables
 const sidebar = document.querySelector("[data-sidebar]");
