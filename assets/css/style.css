@@ -1115,7 +1115,13 @@ main {
   100% { transform: scale(1); }
 }
 
-.project-item > :is(a, .project-card) { width: 100%; }
+.project-item > :is(a, .project-card) {
+  width: 100%;
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
 
 .project-img {
   position: relative;
